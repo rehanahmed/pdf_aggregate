@@ -1,0 +1,25 @@
+	\invisiblesection{Title page}
+	\thispagestyle{empty}    \begin{center}\bf{\Huge{sample combined pdf document}}\end{center}
+    \vspace{2em}
+	\tableofcontents
+	\vspace*{\fill}
+    \newpage
+
+\invisiblesection{Dictionaries}
+\addcontentsline{toc}{section}{ This is the dictionary of icelandic}
+\includepdf[pages=-,rotateoversize, fitpaper]{../sources1/dictionary.pdf}
+
+\invisiblesection{Academic}
+\invisiblesubsection{Research paper}
+\addcontentsline{toc}{subsection}{Actually a newsletter}
+\includepdf[pages=-,rotateoversize, fitpaper]{../sources1/drylab.pdf}
+\addcontentsline{toc}{subsection}{A usenix paper}
+\includepdf[pages=-,rotateoversize, fitpaper]{../sources1/example.pdf}
+\invisiblesubsection{Text book}
+\addcontentsline{toc}{subsection}{Anatomy of the Somatosensory System}
+\includepdf[pages=-,rotateoversize, fitpaper]{../sources1/somatosensory.pdf}
+
+\invisiblesection{Miscellaneous}
+\invisiblesubsection{Invoices}
+\addcontentsline{toc}{subsection}{ This is a sample invoice}
+\includepdf[pages=-,rotateoversize, fitpaper]{../sources1/invoicesample.pdf}

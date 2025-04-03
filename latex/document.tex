@@ -1,0 +1,27 @@
+\documentclass{article}
+%\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{pdflscape}
+%\usepackage{tikz}
+
+\newcommand\invisiblesection[1]{%
+	\refstepcounter{section}%
+	\addcontentsline{toc}{section}{\protect\numberline{\thesection}#1}%
+	\sectionmark{#1}}
+
+\newcommand\invisiblesubsection[1]{%
+	\refstepcounter{subsection}%
+	\addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}#1}%
+	\subsectionmark{#1}}
+
+\newcommand\invisiblesubsubsection[1]{%
+	\refstepcounter{subsubsection}%
+	\addcontentsline{toc}{subsubsection}{\protect\numberline{\thesubsubsection}#1}%
+	\subsubsectionmark{#1}}
+
+
+\begin{document}
+\input{content}	
+\end{document}
