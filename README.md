@@ -26,16 +26,21 @@ As a minimal example, run the following command from the root repository folder:
 
 python3 pdf_aggregate.py -f sample.csv -n sample.pdf -t "sample combined pdf document"
 
-This reads sample.csv, which includes the following data
+This reads sample.csv, which includes the following data. Note that the header row **must not be added** to the csv file. 
 
+| source | level1/note | level2/note | level3/note | note | 
+| --- | --- | --- | --- | --- |
+| sources1/dictionary.pdf | Dictionaries | #nThis is part of the Oxford dictionary |	
+sources1/drylab.pdf | Academic | Research paper | #nActually a newsletter |
+sources1/example.pdf | Academic | Research paper | #nA usenix paper |
+sources1/invoicesample.pdf | Miscellaneous	Invoices | #n This is a sample invoice |
+sources1/somatosensory.pdf | Academic | Text book | #nAnatomy of the Somatosensory System
 
-sources1/dictionary.pdf,	Dictionaries	#nThis is part of the Oxford dictionary	
-sources1/drylab.pdf	        Academic        Research paper	                     #nActually a newsletter
-sources1/example.pdf        Academic        Research paper	                     #nA usenix paper
-sources1/invoicesample.pdf	Miscellaneous	Invoices	                         #n This is a sample invoice
-sources1/somatosensory.pdf	Academic	    Text book	                         #nAnatomy of the Somatosensory System
+Therefore, the 4 PDFs from the sources1 folder are added in the appropriate sections and subsections. 
 
-Therefore, the 4 PDFs from the sources1 folder are added in the appropriate sections and subsections.
+Alternatively, following command line generates an identical file without the need of a csv file:
+
+python3 pdf_aggregate.py -l sources1/dictionary.pdf,Dictionaries,"#nThis is part of oxford dictionary" sources1/drylab.pdf,Academic,"Research paper","#nActually a newsletter" sources1/example.pdf,Academic,"Research paper","#nA usenix paper" sources1/invoicesample.pdf,Miscellaneous,Invoices,"#n This is a sample invoice", sources1/somatosensory.pdf,Academic,"Text book","#nAnatomy of the Somatosensory System" -n sample.pdf -t "sample combined pdf document"
 
 The result is the generation of sample.pdf in the root folder with appropriate sections, subsections, and notes. 
 
